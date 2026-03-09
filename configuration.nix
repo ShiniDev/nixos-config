@@ -71,6 +71,7 @@
     #   tree
     # ];
   };
+  users.groups.shinidev.gid = 1000;
 
   nixpkgs.config.allowUnfree = true;
 
