@@ -57,10 +57,10 @@
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shinidev = {
@@ -93,6 +93,8 @@
     keepassxc
     waybar
     nixd
+    caprine-bin
+    discord # Unfree
     google-chrome # Unfree
     vscode # Unfree
   ];
