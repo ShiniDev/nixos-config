@@ -61,11 +61,10 @@
   #   pulse.enable = true;
   # };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shinidev = {
+    uid = 1000;
+    group = "shinidev";
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     # packages = with pkgs; [
@@ -73,7 +72,6 @@
     # ];
   };
 
-  # programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
