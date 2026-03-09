@@ -38,8 +38,9 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    font = "Lat2-Terminus32";
+    font = "ter-v32n";
     keyMap = "us";
+    packages = with pkgs; [ terminus_font ];
     # useXkbConfig = true; # use xkb.options in tty.
   };
 
@@ -74,6 +75,10 @@
   users.groups.shinidev.gid = 1000;
 
   nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -87,6 +92,7 @@
     neovim
     keepassxc
     waybar
+    nixd
     google-chrome # Unfree
     vscode # Unfree
   ];
