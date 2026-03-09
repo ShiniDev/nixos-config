@@ -85,6 +85,8 @@
     wl-clipboard
     nixfmt
     neovim
+    keepassxc
+    waybar
     google-chrome # Unfree
     vscode # Unfree
   ];
