@@ -72,6 +72,7 @@
   };
 
   # programs.firefox.enable = true;
+ nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -81,7 +82,10 @@
 	git
 wofi
 wl-clipboard
+google-chrome # Unfree
+vscode # Unfree
   ];
+          
 
 programs.sway.enable = true;
 
