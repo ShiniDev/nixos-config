@@ -95,6 +95,8 @@
     nixd
     caprine-bin
     nerd-fonts.jetbrains-mono
+    fastfetch
+    mako
     discord # Unfree
     google-chrome # Unfree
     vscode # Unfree
