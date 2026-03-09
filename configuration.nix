@@ -97,6 +97,7 @@
     nerd-fonts.jetbrains-mono
     fastfetch
     mako
+    tree
     discord # Unfree
     google-chrome # Unfree
     vscode # Unfree
