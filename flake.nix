@@ -7,6 +7,10 @@
       url = "github:nyakase/aerothemeplasma-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -14,6 +18,7 @@
       self,
       nixpkgs,
       aerothemeplasma-nix,
+      home-manager,
       ...
     }@inputs:
     {
@@ -22,6 +27,12 @@
         modules = [
           ./hosts/main/configuration.nix
           aerothemeplasma-nix.nixosModules.aerothemeplasma-nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.shinidev = ./home.nix;
+          }
         ];
       };
     };
