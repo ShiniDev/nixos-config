@@ -98,6 +98,7 @@
     fastfetch
     mako
     tree
+    flameshot
     discord # Unfree
     google-chrome # Unfree
     vscode # Unfree
