@@ -10,7 +10,7 @@
     {
       nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./configuration.nix ];
+        modules = [ ./hosts/main/configuration.nix ];
       };
     };
 }
