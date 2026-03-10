@@ -113,12 +113,12 @@
 
   programs.aeroshell = {
     enable = true; # required
-    fonts.enable = true; # font files needed
+    # fonts.enable = true; # font files needed
     polkit.enable = true;
     aerothemeplasma = {
       enable = true; # required
       sddm.enable = true;
-      plymouth.enable = true; # font files needed
+      # plymouth.enable = true; # font files needed
     };
   };
 
