@@ -99,10 +99,13 @@
     mako
     tree
     flameshot
+    tuned
     discord # Unfree
     google-chrome # Unfree
     vscode # Unfree
   ];
+
+  services.tuned.enable = true;
 
   programs.sway.enable = true;
 
