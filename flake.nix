@@ -3,14 +3,26 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+    aerothemeplasma-nix = {
+      url = "github:nyakase/aerothemeplasma-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      aerothemeplasma-nix,
+      ...
+    }@inputs:
     {
       nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/main/configuration.nix ];
+        modules = [
+          ./hosts/main/configuration.nix
+          aerothemeplasma-nix.nixosModules.aerothemeplasma-nix
+        ];
       };
     };
 }

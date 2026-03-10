@@ -106,19 +106,21 @@
 
   programs.sway.enable = true;
 
-  # Enable Plasma
-  services.desktopManager.plasma6.enable = true;
+  boot.plymouth.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true; # required
+  services.displayManager.defaultSession = "aerothemeplasma";
 
-  # Default display manager for Plasma
-  services.displayManager.sddm = {
-    enable = true;
-
-    # To use Wayland (Experimental for SDDM)
-    wayland.enable = true;
+  programs.aeroshell = {
+    enable = true; # required
+    fonts.enable = true; # font files needed
+    polkit.enable = true;
+    aerothemeplasma = {
+      enable = true; # required
+      sddm.enable = true;
+      plymouth.enable = true; # font files needed
+    };
   };
-
-  # Optionally enable xserver
-  services.xserver.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
