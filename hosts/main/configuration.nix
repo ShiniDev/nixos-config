@@ -106,6 +106,20 @@
 
   programs.sway.enable = true;
 
+  # Enable Plasma
+  services.desktopManager.plasma6.enable = true;
+
+  # Default display manager for Plasma
+  services.displayManager.sddm = {
+    enable = true;
+
+    # To use Wayland (Experimental for SDDM)
+    wayland.enable = true;
+  };
+
+  # Optionally enable xserver
+  services.xserver.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
