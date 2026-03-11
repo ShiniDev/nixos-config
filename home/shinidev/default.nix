@@ -8,7 +8,6 @@
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";
   home.packages = with pkgs; [
-    htop
     discord # Unfree
     google-chrome # Unfree
     vscode # Unfree
