@@ -93,7 +93,6 @@
     keepassxc
     waybar
     nixd
-    caprine-bin
     nerd-fonts.jetbrains-mono
     fastfetch
     mako
