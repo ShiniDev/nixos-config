@@ -8,6 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
+    htop
     wget
     git
     neovim
