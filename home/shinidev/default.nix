@@ -1,10 +1,26 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
+  imports = [
+
+  ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";
+  home.packages = with pkgs; [
+    htop
+    discord # Unfree
+    google-chrome # Unfree
+    vscode # Unfree
+    mako
+    flameshot
+    wofi
+    wl-clipboard
+    keepassxc
+    nixfmt
+    nixd
+    waybar
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
