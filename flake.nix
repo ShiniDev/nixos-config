@@ -31,7 +31,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.shinidev = ./home/shinidev/;
+            home-manager.users.shinidev = ./home/shinidev;
           }
         ];
       };
