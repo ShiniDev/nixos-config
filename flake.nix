@@ -3,10 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    # flake-parts = {
-    #   url = "github:hercules-ci/flake-parts";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    flake-parts.url = "github:hercules-ci/flake-parts";
     aerothemeplasma-nix = {
       url = "github:nyakase/aerothemeplasma-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,13 +16,17 @@
 
   outputs =
     {
-      self,
+      flake-parts,
       nixpkgs,
       aerothemeplasma-nix,
       home-manager,
       ...
     }@inputs:
-    {
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
       nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
