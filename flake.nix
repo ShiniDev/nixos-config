@@ -17,9 +17,6 @@
   outputs =
     {
       flake-parts,
-      nixpkgs,
-      aerothemeplasma-nix,
-      home-manager,
       ...
     }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
