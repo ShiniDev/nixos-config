@@ -12,7 +12,6 @@
     google-chrome # Unfree
     vscode # Unfree
     mako
-    flameshot
     wofi
     wl-clipboard
     keepassxc
