@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     aerothemeplasma-nix = {
       url = "github:nyakase/aerothemeplasma-nix";
       inputs.nixpkgs.follows = "nixpkgs";
