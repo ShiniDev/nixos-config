@@ -27,18 +27,8 @@
         "x86_64-linux"
         "aarch64-linux"
       ];
-      nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/main/configuration.nix
-          aerothemeplasma-nix.nixosModules.aerothemeplasma-nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.shinidev = ./home/shinidev;
-          }
-        ];
-      };
+      imports = [
+        ./parts/nixos.nix
+      ];
     };
 }
