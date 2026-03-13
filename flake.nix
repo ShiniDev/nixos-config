@@ -7,6 +7,7 @@
     aerothemeplasma-nix = {
       url = "github:nyakase/aerothemeplasma-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
