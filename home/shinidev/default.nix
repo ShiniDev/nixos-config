@@ -16,8 +16,6 @@
     wofi
     wl-clipboard
     keepassxc
-    nixfmt
-    nixd
     waybar
   ];
 

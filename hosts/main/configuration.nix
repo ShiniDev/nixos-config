@@ -15,6 +15,7 @@
     ../../modules/nix-settings.nix
     ../../modules/users.nix
   ];
+
   networking.hostName = "shinixos"; # Define your hostname.
 
   # Set your time zone.

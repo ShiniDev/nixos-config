@@ -15,6 +15,8 @@
     nerd-fonts.jetbrains-mono
     fastfetch
     tree
+    nixd
+    nixfmt
   ];
 
   services.tuned.enable = true;
