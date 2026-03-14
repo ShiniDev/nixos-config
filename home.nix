@@ -1,9 +1,9 @@
-{ pkgs, USERNAME, ... }:
+{ pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = USERNAME;
-  home.homeDirectory = "/home/${USERNAME}";
+  home.username = "shinidev";
+  home.homeDirectory = "/home/shinidev";
   home.packages = with pkgs; [
     discord # Unfree
     google-chrome # Unfree

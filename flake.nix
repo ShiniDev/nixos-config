@@ -20,12 +20,8 @@
       home-manager,
       ...
     }@inputs:
-    let
-      USERNAME = "shinidev";
-    in
     {
       nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
-        extraArgs = [ USERNAME ];
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
