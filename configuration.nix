@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -8,12 +6,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/audio.nix
-    ../../modules/boot.nix
-    ../../modules/desktop.nix
-    ../../modules/networking.nix
-    ../../modules/nix-settings.nix
-    ../../modules/users.nix
+    ./modules/audio.nix
+    ./modules/boot.nix
+    ./modules/desktop.nix
+    ./modules/networking.nix
+    ./modules/nix-settings.nix
+    ./modules/users.nix
   ];
   networking.hostName = "shinixos"; # Define your hostname.
 

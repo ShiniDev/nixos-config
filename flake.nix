@@ -1,13 +1,11 @@
 {
-  description = "A very basic flake";
+  description = "My system setup flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
     aerothemeplasma-nix = {
       url = "github:nyakase/aerothemeplasma-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -17,16 +15,28 @@
 
   outputs =
     {
-      flake-parts,
+      nixpkgs,
+      aerothemeplasma-nix,
+      home-manager,
       ...
     }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
-      imports = [
-        ./parts/nixos.nix
-      ];
+    let
+      USERNAME = "shinidev";
+    in
+    {
+      nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
+        extraArgs = [ USERNAME ];
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          aerothemeplasma-nix.nixosModules.aerothemeplasma-nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.shinidev = ./home.nix;
+          }
+        ];
+      };
     };
 }

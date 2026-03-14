@@ -1,12 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, USERNAME, ... }:
 {
-  imports = [
-    ./git.nix
-  ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "shinidev";
-  home.homeDirectory = "/home/shinidev";
+  home.username = USERNAME;
+  home.homeDirectory = "/home/${USERNAME}";
   home.packages = with pkgs; [
     discord # Unfree
     google-chrome # Unfree
@@ -17,6 +14,10 @@
     keepassxc
     waybar
   ];
+
+  programs.git.enable = true;
+  programs.git.userName = "ShiniDev";
+  programs.git.userEmail = "markjoefreylaurente@gmail.com";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

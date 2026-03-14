@@ -1,11 +1,11 @@
-{ ... }:
+{ USERNAME, ... }:
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.shinidev = {
+  users.users.${USERNAME} = {
     uid = 1000;
-    group = "shinidev";
+    group = USERNAME;
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
-  users.groups.shinidev.gid = 1000;
+  users.groups.${USERNAME}.gid = 1000;
 }
