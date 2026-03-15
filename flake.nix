@@ -24,13 +24,13 @@
       nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./hosts/main-laptop/configuration.nix
           aerothemeplasma-nix.nixosModules.aerothemeplasma-nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.shinidev = ./home.nix;
+            home-manager.users.shinidev = ./home/shinidev/default.nix;
           }
         ];
       };

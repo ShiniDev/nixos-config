@@ -17,6 +17,7 @@
     tree
     nixd
     nixfmt
+    php85
   ];
 
   services.tuned.enable = true;
