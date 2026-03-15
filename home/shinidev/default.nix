@@ -13,7 +13,6 @@
     wl-clipboard
     keepassxc
     waybar
-    cockpit
   ];
 
   programs.git.enable = true;
