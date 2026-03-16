@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./services.nix
+  ];
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";
   home.packages = with pkgs; [
@@ -14,23 +17,22 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  services.safeeyes.enable = true;
-  services.snixembed = {
-    enable = true;
-    beforeUnits = [ "safeeyes.service" ];
-  };
-
-  programs.git.enable = true;
-  programs.git.settings = {
-    user = {
-      name = "ShiniDev";
-      email = "markjoefreylaurente@gmail.com";
+  programs = {
+    git = {
+      enable = true;
+      settings = {
+        user = {
+          name = "ShiniDev";
+          email = "markjoefreylaurente@gmail.com";
+        };
+      };
     };
-  };
-
-  programs.bash.enable = true;
-  programs.bash.shellAliases = {
-    shin_nix_rebuild = "sudo nixos-rebuild switch --show-trace --log-format bar-with-logs --flake /etc/nixos#home-station";
+    bash = {
+      enable = true;
+      shellAliases = {
+        shin_nix_rebuild = "sudo nixos-rebuild switch --show-trace --log-format bar-with-logs --flake /etc/nixos#home-station";
+      };
+    };
   };
 
   # This value determines the Home Manager release that your
