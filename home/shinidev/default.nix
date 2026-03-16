@@ -20,6 +20,11 @@
   programs.git.userName = "ShiniDev";
   programs.git.userEmail = "markjoefreylaurente@gmail.com";
 
+  programs.bash.enable = true;
+  programs.bash.shellAliases = {
+    shin_nix_rebuild = "sudo nixos-rebuild switch --show-trace --log-format bar-with-logs --flake /etc/nixos#shinixos";
+  };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
