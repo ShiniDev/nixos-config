@@ -25,7 +25,7 @@
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [
-          ./hosts/main-laptop/configuration.nix
+          ./hosts/home-station/configuration.nix
           aerothemeplasma-nix.nixosModules.aerothemeplasma-nix
           home-manager.nixosModules.home-manager
           {
