@@ -10,7 +10,5 @@
       };
     };
     cockpit.enable = true; # Port 9090
-    firewalld.enable = true;
   };
-  networking.networkmanager.enable = true;
 }

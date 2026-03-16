@@ -11,6 +11,7 @@
     ../../modules/time.nix
     ../../modules/users.nix
     ../../modules/kernel-latest.nix
+    ../../modules/networking.nix
   ];
   networking.hostName = "home-svr";
   system.stateVersion = "25.11";
