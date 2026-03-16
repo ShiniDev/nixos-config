@@ -13,8 +13,13 @@
     wl-clipboard
     keepassxc
     waybar
-    safeeyes
   ];
+
+  services.safeeyes.enable = true;
+  services.snixembed = {
+    enable = true;
+    beforeUnits = [ "safeeyes.service" ];
+  };
 
   programs.git.enable = true;
   programs.git.userName = "ShiniDev";
