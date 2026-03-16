@@ -21,8 +21,12 @@
   };
 
   programs.git.enable = true;
-  programs.git.userName = "ShiniDev";
-  programs.git.userEmail = "markjoefreylaurente@gmail.com";
+  programs.git.settings = {
+    user = {
+      name = "ShiniDev";
+      email = "markjoefreylaurente@gmail.com";
+    };
+  };
 
   programs.bash.enable = true;
   programs.bash.shellAliases = {
