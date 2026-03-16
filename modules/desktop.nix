@@ -1,7 +1,5 @@
 { ... }:
 {
-  programs.sway.enable = true;
-
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true; # required
   services.displayManager.defaultSession = "aerothemeplasma";
