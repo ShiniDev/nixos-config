@@ -13,6 +13,7 @@
     wl-clipboard
     keepassxc
     waybar
+    safeeyes
   ];
 
   programs.git.enable = true;
