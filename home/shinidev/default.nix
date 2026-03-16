@@ -25,7 +25,7 @@
 
   programs.bash.enable = true;
   programs.bash.shellAliases = {
-    shin_nix_rebuild = "sudo nixos-rebuild switch --show-trace --log-format bar-with-logs --flake /etc/nixos#shinixos";
+    shin_nix_rebuild = "sudo nixos-rebuild switch --show-trace --log-format bar-with-logs --flake /etc/nixos#home-station";
   };
 
   # This value determines the Home Manager release that your

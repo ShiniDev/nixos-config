@@ -21,7 +21,8 @@
       ...
     }@inputs:
     {
-      nixosConfigurations.shinixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.home-station = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [
           ./hosts/main-laptop/configuration.nix

@@ -14,7 +14,7 @@
     ../../modules/time.nix
     ../../modules/bash.nix
   ];
-  networking.hostName = "shinixos"; # Define your hostname.
+  networking.hostName = "home-station"; # Define your hostname.
   system.stateVersion = "25.11"; # DO NOT CHANGE
 
   services.cockpit.enable = true;
