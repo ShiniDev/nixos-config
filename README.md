@@ -31,3 +31,32 @@ After that is the folder structure? Meh, currently I feel like I have a good fol
 ## Goals
 
 1. Nixifying my home server laptop, and my cloud instances.
+
+## Tooling Setup
+
+* I use vscode as my editor
+* I then used neovim and nix-ide extensions
+* In which I use nixd as my language server provider for nix-ide
+* Configured it to provide autocomplete for flakes and home manager.
+
+```json
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd", // or "nixd", or ["executable", "argument1", ...]
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": [
+          "nixfmt"
+        ],
+      },
+      "options": {
+        "nixos": {
+          "expr": "(builtins.getFlake \"/home/shinidev/nixos/\").nixosConfigurations.shinixos.options"
+        },
+        "home-manager": {
+          "expr": "(builtins.getFlake \"/home/shinidev/nixos/\").nixosConfigurations.shinixos.options.home-manager.users.type.getSubOptions []"
+        }
+      },
+    }
+  },
+```
