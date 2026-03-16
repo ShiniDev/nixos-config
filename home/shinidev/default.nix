@@ -11,6 +11,7 @@
     wl-clipboard
     keepassxc
     waybar
+    nerd-fonts.jetbrains-mono
   ];
 
   services.safeeyes.enable = true;
