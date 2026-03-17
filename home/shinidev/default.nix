@@ -15,6 +15,8 @@
     keepassxc
     waybar
     nerd-fonts.jetbrains-mono
+    texliveMinimal
+    texlivePackages.latexindent
   ];
 
   programs = {
