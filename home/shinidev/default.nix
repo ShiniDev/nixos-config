@@ -2,6 +2,7 @@
 {
   imports = [
     ./services.nix
+    ./hyprland.nix
   ];
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";

@@ -3,11 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    # Windows 7 Theme
-    aerothemeplasma-nix = {
-      url = "github:nyakase/aerothemeplasma-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +12,6 @@
   outputs =
     {
       nixpkgs,
-      aerothemeplasma-nix,
       home-manager,
       ...
     }@inputs:
@@ -27,7 +21,6 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/home-station/configuration.nix
-          aerothemeplasma-nix.nixosModules.aerothemeplasma-nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
