@@ -7,7 +7,7 @@
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";
   home.packages = with pkgs; [
-    discord # Unfree
+    vesktop
     google-chrome # Unfree
     vscode # Unfree
     mako
