@@ -7,9 +7,6 @@
     git
     neovim
     fastfetch
-    tree
-    nixd
-    nixfmt
-    php85
+    curl
   ];
 }

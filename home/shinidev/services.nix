@@ -1,6 +1,0 @@
-{ ... }:
-{
-  services = {
-    safeeyes.enable = false;
-  };
-}
