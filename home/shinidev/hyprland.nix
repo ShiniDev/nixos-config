@@ -13,7 +13,7 @@
       monitor = "eDP-1,1920x1080@120.21300,0x0,1.25";
       input = {
         touchpad = {
-          natural_scroll = false;
+          natural_scroll = true;
         };
       };
       bind = [
