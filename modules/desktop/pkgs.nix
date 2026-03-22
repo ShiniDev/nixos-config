@@ -6,5 +6,7 @@
 		vscodium
 		nixd
 		nixfmt
+		wl-clipboard
+		wofi
 	];
 }
