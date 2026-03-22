@@ -12,6 +12,5 @@
     wl-clipboard
     hyprlauncher
     thunar
-    waybar
   ];
 }
