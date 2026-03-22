@@ -9,9 +9,4 @@
     withUWSM = true;
     xwayland.enable = true;
   };
-  environment.systemPackages = with pkgs; [
-    kitty
-		wofi
-    brightnessctl
-  ];
 }
