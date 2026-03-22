@@ -5,6 +5,7 @@
   imports = [
     ./hyprland.nix
     ./pkgs.nix
+    ./tex-editing-pkgs.nix
   ];
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";
