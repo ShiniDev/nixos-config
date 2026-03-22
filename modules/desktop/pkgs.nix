@@ -4,5 +4,7 @@
 		firefox
 		vesktop
 		vscodium
+		nixd
+		nixfmt
 	];
 }
