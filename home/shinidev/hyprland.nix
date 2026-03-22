@@ -5,7 +5,7 @@
     package = null;
     portalPackage = null;
     settings = {
-      monitor = ",preferred,auto,1.33";
+      monitor = ",preferred,auto,1.25";
 
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
@@ -108,18 +108,20 @@
       };
 
       bind = [
-        "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive,"
-        "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
-        "$mainMod, E, exec, $fileManager"
+        "$mainMod, Return, exec, $terminal"
+        "$mainMod Shift, Q, killactive,"
+        "$mainMod Shift, E, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+        "$mainMod, F, exec, $fileManager"
         "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, $menu"
+        "$mainMod, D, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, layoutmsg, togglesplit"
         "$mainMod, left,  movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up,    movefocus, u"
         "$mainMod, down,  movefocus, d"
+        "$mainMod Shift, left, movewindow, l"
+        "$mainMod Shift, right, movewindow, r"
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -190,6 +192,10 @@
           move = "20 monitor_h-120";
           float = true;
         }
+      ];
+
+      exec-once = [
+        "waybar"
       ];
     };
   };
