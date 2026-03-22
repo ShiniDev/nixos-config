@@ -4,5 +4,13 @@
     kitty
     hyprlauncher
     brightnessctl
+    firefox
+    vesktop
+    vscodium
+    nixd
+    nixfmt
+    wl-clipboard
+    hyprlauncher
+    thunar
   ];
 }
