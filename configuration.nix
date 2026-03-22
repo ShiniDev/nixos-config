@@ -15,6 +15,8 @@
     ./modules/system/users.nix
     ./modules/system/program_configs/bash.nix
     ./modules/system/services/ssh.nix
+		./modules/desktop/desktop.nix
+		./modules/desktop/pkgs.nix
   ];
   system.stateVersion = "25.11"; # DO NOT CHANGE
   boot.kernelPackages = pkgs.linuxPackages_latest;
