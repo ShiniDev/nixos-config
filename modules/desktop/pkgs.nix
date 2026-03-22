@@ -7,6 +7,7 @@
 		nixd
 		nixfmt
 		wl-clipboard
-		wofi
+		hyprlauncher
+		thunar
 	];
 }
