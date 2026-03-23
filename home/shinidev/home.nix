@@ -7,6 +7,8 @@
     ./waybar.nix
     ./pkgs.nix
     ./tex-editing-pkgs.nix
+    ./env.nix
+    ./chromium.nix
   ];
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";
