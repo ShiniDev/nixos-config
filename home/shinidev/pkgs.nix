@@ -12,5 +12,8 @@
     hyprlauncher
     thunar
     keepassxc
+    evince
+    foliate
+    telegram-desktop
   ];
 }

@@ -193,6 +193,15 @@
           move = "20 monitor_h-120";
           float = true;
         }
+        "workspace 1 silent, match:class kitty"
+        "workspace 2 silent, match:class firefox"
+        "workspace 3 silent, match:class codium"
+        "workspace 5 silent, match:class thunar"
+        "workspace 5 silent, match:class vesktop"
+        "workspace 4 silent, match:class org.keepassxc.KeePassXC"
+        "workspace 4 silent, match:class com.github.johnfactotum.Foliate"
+        "workspace 4 silent, match:class org.gnome.Evince"
+        "workspace 5 silent, match:class org.telegram.desktop"
       ];
 
       exec-once = [
