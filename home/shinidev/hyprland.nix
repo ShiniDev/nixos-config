@@ -206,6 +206,8 @@
 
       exec-once = [
         "waybar"
+        "kitty"
+        "google-chrome"
       ];
     };
   };
