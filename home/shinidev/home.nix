@@ -9,6 +9,9 @@
     ./tex-editing-pkgs.nix
     ./env.nix
     ./browsers.nix
+    ./bash.nix
+    ./kitty.nix
+    ./noctalia.nix
   ];
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";

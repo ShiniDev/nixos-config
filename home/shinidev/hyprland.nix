@@ -6,7 +6,7 @@
     portalPackage = null;
     systemd.variables = [ "NIXOS_OZONE_WL" ];
     settings = {
-      monitor = ",preferred,auto,1.25";
+      monitor = ",preferred,auto,1.20";
 
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
@@ -20,7 +20,7 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = 20;
+        gaps_out = 5;
         border_size = 2;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
@@ -143,8 +143,8 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        # "$mainMod, S, togglespecialworkspace, magic"
+        # "$mainMod SHIFT, S, movetoworkspace, special:magic"
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up,   workspace, e-1"
       ];
@@ -206,7 +206,7 @@
       ];
 
       exec-once = [
-        "waybar"
+        "noctalia-shell"
         "kitty"
         "google-chrome"
       ];
