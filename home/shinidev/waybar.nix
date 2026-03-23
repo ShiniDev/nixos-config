@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.waybar.enable = true;
   programs.waybar.settings = {
@@ -8,26 +8,40 @@
       height = 30;
       output = [
         "eDP-1"
-        "HDMI-A-1"
       ];
       modules-left = [
         "hyprland/workspaces"
         "hyprland/mode"
-        "wlr/taskbar"
+        # "wlr/taskbar"
       ];
       modules-center = [
         "hyprland/window"
-        "custom/hello-from-waybar"
+        # "custom/hello-from-waybar"
       ];
       modules-right = [
         "mpd"
-        "custom/mymodule#with-css-id"
+        # "custom/mymodule#with-css-id"
+        "clock"
         "temperature"
+        "battery"
       ];
 
       "hyprland/workspaces" = {
-        disable-scroll = true;
-        all-outputs = true;
+        format = "{icon}";
+        on-click = "activate";
+        /*
+          format-icons = {
+            "1" = "  ";
+            "2" = "  ";
+            "3" = "  ";
+            "4" = "  ";
+            "5" = "  ";
+            # urgent = "";
+            # active = "";
+            # default = "";
+          };
+        */
+        sort-by-number = true;
       };
       "custom/hello-from-waybar" = {
         format = "hello {}";
@@ -38,7 +52,12 @@
         '';
       };
     };
-  };
 
-  programs.waybar.style = "* {\n  border: none;\n  border-radius: 0;\n  font-family: Source Code Pro;\n}\nwindow#waybar {\n  background: #16191C;\n  color: #AAB2BF;\n}\n#workspaces button {\n  padding: 0 5px;\n}\n";
+    # programs.waybar.style = lib.readFile ./waybar.css;
+    programs.waybar.style = ''
+      #workspaces button {
+        color: #000000;
+      }
+    '';
+  };
 }
