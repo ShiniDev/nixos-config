@@ -5,8 +5,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/default.nix
-    ../../modules/desktop/default.nix
+    ../../modules/system/_imports.nix
+    ../../modules/desktop/_imports.nix
   ];
   system.stateVersion = "25.11"; # DO NOT CHANGE
   boot.kernelPackages = pkgs.linuxPackages_latest;
