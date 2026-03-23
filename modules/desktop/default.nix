@@ -5,5 +5,6 @@
     ./desktop.nix
     ./fonts.nix
     ./nix-settings.nix
+    ./cursor.nix
   ];
 }
