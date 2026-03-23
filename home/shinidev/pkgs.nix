@@ -4,7 +4,6 @@
     kitty
     hyprlauncher
     brightnessctl
-    firefox
     vesktop
     vscodium
     nixd
@@ -12,5 +11,6 @@
     wl-clipboard
     hyprlauncher
     thunar
+    keepassxc
   ];
 }
