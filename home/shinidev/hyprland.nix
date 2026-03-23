@@ -4,6 +4,7 @@
     enable = true;
     package = null;
     portalPackage = null;
+    systemd.variables = [ "NIXOS_OZONE_WL" ];
     settings = {
       monitor = ",preferred,auto,1.25";
 
