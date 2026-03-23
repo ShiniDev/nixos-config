@@ -195,6 +195,7 @@
         }
         "workspace 1 silent, match:class kitty"
         "workspace 2 silent, match:class firefox"
+        "workspace 2 silent, match:class google-chrome"
         "workspace 3 silent, match:class codium"
         "workspace 5 silent, match:class thunar"
         "workspace 5 silent, match:class vesktop"
