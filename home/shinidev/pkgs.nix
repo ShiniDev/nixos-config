@@ -15,5 +15,6 @@
     evince
     foliate
     telegram-desktop
+    bibata-cursors
   ];
 }
