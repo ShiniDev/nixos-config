@@ -8,7 +8,7 @@
     ./pkgs.nix
     ./tex-editing-pkgs.nix
     ./env.nix
-    ./chromium.nix
+    ./firefox.nix
   ];
   home.username = "shinidev";
   home.homeDirectory = "/home/shinidev";
