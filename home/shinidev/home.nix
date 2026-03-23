@@ -4,7 +4,6 @@
 {
   imports = [
     ./hyprland.nix
-    ./waybar.nix
     ./pkgs.nix
     ./tex-editing-pkgs.nix
     ./env.nix
