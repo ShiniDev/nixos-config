@@ -8,5 +8,6 @@
     neovim
     fastfetch
     curl
+    tree
   ];
 }
