@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./hyprland.nix
     ./pkgs.nix
     ./tex-editing-pkgs.nix
     ./env.nix
@@ -9,6 +8,7 @@
     ./bash.nix
     ./kitty.nix
     ./noctalia.nix
+    ./sway.nix
+    # ./hyprland.nix
   ];
-
 }

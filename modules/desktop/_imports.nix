@@ -2,7 +2,7 @@
 {
   imports = [
     ./audio.nix
-    ./desktop.nix
+    ./sway.nix
     ./fonts.nix
     ./nix-settings.nix
   ];
