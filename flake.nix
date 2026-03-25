@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.noctalia-qs.follows = "noctalia-qs";
     };
-
     noctalia-qs = {
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +26,7 @@
     {
       nixpkgs,
       home-manager,
+      disko,
       ...
     }@inputs:
     {
@@ -38,6 +42,14 @@
             home-manager.users.shinidev = ./home/shinidev/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
+        ];
+      };
+      nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/home-server/configuration.nix
         ];
       };
     };
