@@ -9,7 +9,7 @@
     ./pkgs.nix
     ./time.nix
     ./users.nix
-    ./program_configs/bash.nix
+    ./program_configs/shell.nix
     ./services/ssh.nix
   ];
 }
