@@ -5,7 +5,8 @@
     hyprlauncher
     brightnessctl
     vesktop
-    vscodium
+    # vscodium
+    vscode
     nixd
     nixfmt
     wl-clipboard

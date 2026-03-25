@@ -46,6 +46,7 @@
         ];
         "3" = [
           { app_id = "codium"; }
+          { app_id = "code"; }
         ];
         "4" = [
           { app_id = "org.gnome.Evince"; }
