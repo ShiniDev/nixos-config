@@ -65,6 +65,7 @@
         lib.mkOptionDefault {
           "${modifier}+Shift+r" = "reload";
           "${modifier}+d" = "exec noctalia-shell ipc call launcher toggle";
+          "Print" = "exec screenshot-menu";
 
           # Media Controls (Audio)
           "XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";

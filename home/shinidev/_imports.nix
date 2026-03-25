@@ -9,6 +9,7 @@
     ./kitty.nix
     ./noctalia.nix
     ./sway.nix
+    ./scripts/scripts.nix
     # ./hyprland.nix
   ];
 }

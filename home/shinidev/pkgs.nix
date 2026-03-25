@@ -9,12 +9,14 @@
     nixd
     nixfmt
     wl-clipboard
-    hyprlauncher
     thunar
     keepassxc
     evince
     foliate
     telegram-desktop
     bibata-cursors
+    grim
+    slurp
+    wofi
   ];
 }
