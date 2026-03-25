@@ -11,6 +11,7 @@
       background_opacity = 0.3;
       background_blur = 5;
       themeFile = "noctalia";
+      term = "xterm-256color";
     };
   };
 }

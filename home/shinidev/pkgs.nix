@@ -19,5 +19,6 @@
     grim
     slurp
     wofi
+    mako
   ];
 }

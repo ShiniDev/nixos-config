@@ -93,6 +93,7 @@
       };
       startup = [
         { command = "noctalia-shell"; }
+        { commnad = "mako"; }
         { command = "kitty"; }
         { command = "google-chrome"; }
       ];
