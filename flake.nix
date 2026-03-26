@@ -35,6 +35,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/home-station/configuration.nix
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
