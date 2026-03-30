@@ -7,6 +7,10 @@
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,6 +31,7 @@
       nixpkgs,
       home-manager,
       disko,
+      stylix,
       ...
     }@inputs:
     {
@@ -36,12 +41,14 @@
         modules = [
           ./hosts/home-station/configuration.nix
           disko.nixosModules.disko
+          stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.shinidev = ./home/shinidev/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.backupFileExtension = "backup";
           }
         ];
       };
