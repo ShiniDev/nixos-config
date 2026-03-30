@@ -10,7 +10,8 @@
     ./noctalia.nix
     ./sway.nix
     ./ssh.nix
+    ./vscode.nix
     ./scripts/scripts.nix
-    # ./hyprland.nix
+    ./stylix.nix
   ];
 }

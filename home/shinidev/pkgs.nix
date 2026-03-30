@@ -1,12 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    kitty
     hyprlauncher
     brightnessctl
     vesktop
-    # vscodium
-    vscode
     nixd
     nixfmt
     wl-clipboard
@@ -21,4 +18,6 @@
     wofi
     mako
   ];
+  programs.starship.enable = true;
+  programs.kitty.enable = true;
 }
