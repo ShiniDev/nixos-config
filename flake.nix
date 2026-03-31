@@ -24,6 +24,10 @@
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,31 +36,41 @@
       home-manager,
       disko,
       stylix,
+      agenix,
       ...
     }@inputs:
+    let
+      systems = {
+        default = "x86_64-linux";
+      };
+      homeManagerDefaults = {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.backupFileExtension = "backup";
+        home-manager.extraSpecialArgs = { inherit inputs; };
+      };
+    in
     {
       nixosConfigurations.home-station = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        system = "x86_64-linux";
+        system = systems.default;
         modules = [
           ./hosts/home-station/configuration.nix
           disko.nixosModules.disko
           stylix.nixosModules.stylix
+          agenix.nixosModules.default
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.shinidev = ./home/shinidev/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.backupFileExtension = "backup";
-          }
+          homeManagerDefaults
+          { home-manager.users.shinidev = ./home/shinidev/home.nix; }
         ];
       };
       nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        system = "x86_64-linux";
+        system = systems.default;
         modules = [
           disko.nixosModules.disko
+          agenix.nixosModules.default
+          stylix.nixosModules.stylix
           ./hosts/home-server/configuration.nix
         ];
       };

@@ -11,5 +11,6 @@
     ./users.nix
     ./program_configs/shell.nix
     ./services/ssh.nix
+    ./agenix.nix
   ];
 }
