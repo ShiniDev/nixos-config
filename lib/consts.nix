@@ -1,5 +1,5 @@
 { inputs, ... }:
-let
+rec {
   systems = {
     default = "x86_64-linux";
   };
@@ -15,9 +15,6 @@ let
     home-manager.backupFileExtension = "backup";
     home-manager.extraSpecialArgs = { inherit inputs; };
   };
-in
-{
-  inherit systemModulesDefaults systems homeManagerDefaults;
   desktopModulesDefaults = systemModulesDefaults ++ [
     inputs.home-manager.nixosModules.home-manager
     homeManagerDefaults
