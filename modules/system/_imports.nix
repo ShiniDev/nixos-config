@@ -5,12 +5,11 @@
     ./console.nix
     ./locale.nix
     ./networking.nix
-    ./nix-features.nix
+    ./nix-settings.nix
     ./pkgs.nix
     ./time.nix
     ./users.nix
     ./program_configs/shell.nix
     ./services/ssh.nix
-    ./agenix.nix
   ];
 }
