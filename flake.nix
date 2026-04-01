@@ -32,45 +32,26 @@
 
   outputs =
     {
-      nixpkgs,
-      home-manager,
-      disko,
-      stylix,
-      agenix,
       ...
     }@inputs:
     let
-      systems = {
-        default = "x86_64-linux";
-      };
-      homeManagerDefaults = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.backupFileExtension = "backup";
-        home-manager.extraSpecialArgs = { inherit inputs; };
+      consts = import ./lib/consts.nix {
+        inherit inputs;
       };
     in
     {
-      nixosConfigurations.home-station = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        system = systems.default;
-        modules = [
+      nixosConfigurations.home-station = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs consts; };
+        system = consts.systems.default;
+        modules = consts.desktopModulesDefaults ++ [
           ./hosts/home-station/configuration.nix
-          disko.nixosModules.disko
-          stylix.nixosModules.stylix
-          agenix.nixosModules.default
-          home-manager.nixosModules.home-manager
-          homeManagerDefaults
           { home-manager.users.shinidev = ./home/shinidev/home.nix; }
         ];
       };
-      nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        system = systems.default;
-        modules = [
-          disko.nixosModules.disko
-          agenix.nixosModules.default
-          stylix.nixosModules.stylix
+      nixosConfigurations.home-server = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs consts; };
+        system = consts.systems.default;
+        modules = consts.systemModulesDefaults ++ [
           ./hosts/home-server/configuration.nix
         ];
       };
