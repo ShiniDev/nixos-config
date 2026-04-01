@@ -13,5 +13,6 @@
     ./vscode.nix
     ./scripts/scripts.nix
     ./stylix.nix
+    ./vesktop.nix
   ];
 }

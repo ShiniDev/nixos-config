@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     hyprlauncher
     brightnessctl
-    vesktop
     nixd
     nixfmt
     wl-clipboard
