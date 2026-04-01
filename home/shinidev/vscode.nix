@@ -6,14 +6,12 @@
     package = pkgs.vscodium;
     mutableExtensionsDir = false;
 
-    # 1. Declare your extensions
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
       asvetliakov.vscode-neovim
       dracula-theme.theme-dracula
     ];
 
-    # 2. Configure Settings
     profiles.default.userSettings = {
       "workbench.colorTheme" = "Dracula Theme";
       "editor.formatOnSave" = true;
@@ -22,16 +20,20 @@
       "nix.serverPath" = "nixd";
       "nix.serverSettings" = {
         "nixd" = {
+          "nixpkgs" = {
+            "expr" = "import (builtins.getFlake (builtins.toString /home/shinidev/nixos)).inputs.nixpkgs {}";
+          };
           "formatting" = {
             "command" = [ "nixfmt" ];
           };
           "options" = {
             "nixos" = {
-              "expr" = "(builtins.getFlake \"/home/shinidev/nixos\").nixosConfigurations.home-station.options";
+              "expr" =
+                "(builtins.getFlake (builtins.toString /home/shinidev/nixos)).nixosConfigurations.home-station.options";
             };
             "home-manager" = {
               "expr" =
-                "(builtins.getFlake \"/home/shinidev/nixos\").nixosConfigurations.home-station.options.home-manager.users.type.getSubOptions []";
+                "(builtins.getFlake (builtins.toString /home/shinidev/nixos)).nixosConfigurations.home-station.options.home-manager.users.type.getSubOptions []";
             };
           };
         };
