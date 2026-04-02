@@ -1,6 +1,10 @@
+{ inputs, self, ... }:
 {
-  ...
-}:
-{
-  time.timeZone = "America/New_York";
+  flake.nixosModules.system-time =
+    {
+      ...
+    }:
+    {
+      time.timeZone = "America/New_York";
+    };
 }
