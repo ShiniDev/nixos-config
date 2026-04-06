@@ -43,6 +43,7 @@
         ./modules
         ./lib
         ./hosts
+        ./home
       ]
     );
 }
