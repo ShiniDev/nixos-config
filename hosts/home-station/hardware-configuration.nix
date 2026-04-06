@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.nixosModules.lenovo-ideapad-gaming-hardware =
+  flake.nixosModules.home-station-hardware =
     {
       config,
       lib,
