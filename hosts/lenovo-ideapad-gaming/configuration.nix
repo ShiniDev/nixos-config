@@ -6,8 +6,10 @@
     modules = [
       self.nixosModules.lenovo-ideapad-gaming-hardware
       self.nixosModules.lenovo-ideapad-gaming
-      self.nixosModules.system-defaults
-      self.nixosModules.desktop-defaults
+      self.nixosModules.core
+      self.nixosModules.apps
+      self.nixosModules.graphical
+      self.nixosModules.networking
     ];
   };
 
@@ -17,6 +19,5 @@
       system.stateVersion = "25.11"; # DO NOT CHANGE
       boot.kernelPackages = pkgs.linuxPackages_latest;
       networking.hostName = "lenovo-ideapad-gaming"; # Define your hostname.
-      shinidev.networking.role = "desktop";
     };
 }

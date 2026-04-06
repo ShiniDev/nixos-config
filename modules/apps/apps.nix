@@ -1,15 +1,13 @@
 { ... }:
 {
-  flake.nixosModules.system-shell =
+  flake.nixosModules.apps =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
         atuin
       ];
-      programs.starship = {
-        enable = true;
-      };
       programs = {
+        starship.enable = true;
         bash = {
           enable = true;
           completion.enable = true;
