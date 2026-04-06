@@ -1,15 +1,28 @@
+{ inputs, self, ... }:
 {
-  pkgs,
-  ...
-}:
-{
-  imports = [
-    ./hardware-configuration.nix
-    ../../modules/system/_imports.nix
-    ../../modules/desktop/_imports.nix
-  ];
-  system.stateVersion = "25.11"; # DO NOT CHANGE
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  networking.hostName = "home-station"; # Define your hostname.
-  shinidev.networking.role = "desktop";
+  flake.nixosConfigurations.home-station = inputs.nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit inputs; };
+    system = "x86_64-linux";
+    modules =
+      self.consts.desktopModulesDefaults
+      ++ (with self.nixosModules; [
+        home-station-hardware
+        home-station
+        core
+        apps
+        graphical
+        networking
+        home-shinidev-apps
+        home-shinidev-core
+        home-shinidev-graphical
+      ]);
+  };
+
+  flake.nixosModules.home-station =
+    { pkgs, ... }:
+    {
+      system.stateVersion = "25.11"; # DO NOT CHANGE
+      boot.kernelPackages = pkgs.linuxPackages_latest;
+      networking.hostName = "home-station"; # Define your hostname.
+    };
 }

@@ -3,6 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
+    import-tree = {
+      url = "github:vic/import-tree";
+    };
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,29 +37,13 @@
   };
 
   outputs =
-    {
-      ...
-    }@inputs:
-    let
-      consts = import ./lib/consts.nix {
-        inherit inputs;
-      };
-    in
-    {
-      nixosConfigurations.home-station = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs consts; };
-        system = consts.systems.default;
-        modules = consts.desktopModulesDefaults ++ [
-          ./hosts/home-station/configuration.nix
-          { home-manager.users.shinidev = ./home/shinidev/home.nix; }
-        ];
-      };
-      nixosConfigurations.home-server = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs consts; };
-        system = consts.systems.default;
-        modules = consts.systemModulesDefaults ++ [
-          ./hosts/home-server/configuration.nix
-        ];
-      };
-    };
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
+      inputs.import-tree [
+        ./modules
+        ./lib
+        ./hosts
+        ./home
+      ]
+    );
 }
