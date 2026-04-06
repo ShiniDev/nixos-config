@@ -3,11 +3,7 @@
   flake.nixosModules.system-defaults =
     { inputs, pkgs, ... }:
     {
-      imports = [
-        inputs.disko.nixosModules.disko
-        inputs.stylix.nixosModules.stylix
-        inputs.agenix.nixosModules.default
-        { environment.systemPackages = [ inputs.agenix.packages.${pkgs.system}.default ]; }
+      imports = self.consts.systemModulesDefaults ++ [
         self.nixosModules.system-env
         self.nixosModules.system-networking
         self.nixosModules.system-nix-settings
