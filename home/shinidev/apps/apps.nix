@@ -93,6 +93,8 @@
 
         # GUI & WORKFLOW PACKAGES
         home.packages = with pkgs; [
+          prismlauncher
+          graalvmPackages.graalvm-ce
           thunar
           keepassxc
           evince
