@@ -1,11 +1,8 @@
 { ... }:
 {
-  flake.homeModules.shinidev-core =
+  flake.homeModules.core =
     { pkgs, ... }:
     {
-      home.username = "shinidev";
-      home.homeDirectory = "/home/shinidev";
-      home.stateVersion = "25.11";
       programs.home-manager.enable = true;
 
       # ENV

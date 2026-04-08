@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.homeModules.shinidev-graphical =
+  flake.homeModules.graphical =
     {
       config,
       lib,

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.shinidev-apps =
+  flake.homeModules.apps =
     { pkgs, ... }:
     {
       # BROWSERS
