@@ -56,7 +56,7 @@
         wl-clipboard
         grim
         slurp
-        (writeShellScriptBin "screenshot-menu" (builtins.readFile ./scripts/screenshot-menu.sh))
+        (writeShellScriptBin "screenshot-menu" (builtins.readFile ./.scripts/screenshot-menu.sh))
       ];
     };
 }
