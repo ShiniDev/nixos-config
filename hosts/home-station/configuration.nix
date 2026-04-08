@@ -12,9 +12,7 @@
         apps
         graphical
         networking
-        home-shinidev-apps
-        home-shinidev-core
-        home-shinidev-graphical
+        shinidev-home
       ]);
   };
 

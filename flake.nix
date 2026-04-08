@@ -44,6 +44,7 @@
         ./lib
         ./hosts
         ./home
+        ./flake-parts.nix
       ]
     );
 }
