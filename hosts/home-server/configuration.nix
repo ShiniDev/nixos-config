@@ -21,6 +21,9 @@
       ];
       system.stateVersion = "25.11"; # DO NOT CHANGE
       boot.kernelPackages = pkgs.linuxPackages_latest;
+      boot.kernelParams = [
+        "consoleblank=5"
+      ];
       networking.hostName = "home-server"; # Define your hostname.
     };
 }
