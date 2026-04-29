@@ -1,7 +1,12 @@
 { self, ... }:
 {
   flake.nixosModules.core =
-    { inputs, pkgs, ... }:
+    {
+      inputs,
+      pkgs,
+      config,
+      ...
+    }:
     {
       # BOOT
       boot.loader.systemd-boot.enable = true;
@@ -19,16 +24,17 @@
       # TIME
       time.timeZone = "America/New_York";
 
+      age.secrets.shinidev-password.file = ../../secrets/shinidev-password.age;
+
+      users.mutableUsers = false;
       # DEFAULT USER
       users.users.shinidev = {
         uid = 1000;
         group = "shinidev";
         isNormalUser = true;
         extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-        openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ3+ZgIr4gkofsH5gQYKb60t2Stx5WWsQbhAzmW6Emxm shinidev@home-station
-"
-        ];
+        openssh.authorizedKeys.keys = self.keys.ssh.shinidev ++ self.keys.ssh.home-station;
+        hashedPasswordFile = config.age.secrets.shinidev-password.path;
       };
       users.groups.shinidev.gid = 1000;
 
@@ -61,6 +67,8 @@
         fastfetch
         curl
         tree
+        javaPackages.compiler.temurin-bin.jdk-25
+        python3
       ];
 
       # SERVICES
