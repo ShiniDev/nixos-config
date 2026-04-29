@@ -609,7 +609,7 @@
       "enableUserTheming": false
     },
     "nightLight": {
-      "enabled": true,
+      "enabled": false,
       "forced": false,
       "autoSchedule": true,
       "nightTemp": "5003",
@@ -740,7 +740,7 @@
         "y": 0,
         "active": true,
         "focused": true,
-        "current_workspace": "7"
+        "current_workspace": "5"
       }
     },
     "notificationsState": {
