@@ -77,6 +77,10 @@
               { app_id = "org.telegram.desktop"; }
               { app_id = "vesktop"; }
             ];
+            "6" = [
+              { app_id = "org.prismlauncher.PrismLauncher"; }
+              { class = "Minecraft"; }
+            ];
           };
           bars = [ ];
           keybindings = lib.mkOptionDefault {

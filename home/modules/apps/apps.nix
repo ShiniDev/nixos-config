@@ -36,6 +36,13 @@
           jnoortheen.nix-ide
           asvetliakov.vscode-neovim
           dracula-theme.theme-dracula
+          redhat.java
+          vscjava.vscode-gradle
+          vscjava.vscode-java-debug
+          vscjava.vscode-java-test
+          vscjava.vscode-maven
+          vscjava.vscode-gradle
+          vscjava.vscode-java-dependency
         ];
 
         profiles.default.userSettings = {
@@ -93,7 +100,6 @@
       # GUI & WORKFLOW PACKAGES
       home.packages = with pkgs; [
         prismlauncher
-        graalvmPackages.graalvm-ce
         thunar
         keepassxc
         evince
