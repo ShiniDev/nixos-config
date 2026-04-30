@@ -53,15 +53,12 @@
       boot.initrd.luks.devices = {
         "luks_root" = {
           device = "/dev/mapper/vg_machine-lv_root";
-          preLVM = false;
         };
         "luks_home" = {
           device = "/dev/mapper/vg_machine-lv_home";
-          preLVM = false;
         };
         "luks_swap" = {
           device = "/dev/mapper/vg_machine-lv_swap";
-          preLVM = false;
         };
       };
 
