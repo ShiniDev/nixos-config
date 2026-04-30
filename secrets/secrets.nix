@@ -5,7 +5,7 @@ let
 in
 {
   "shinidev-password.age" = {
-    publicKeys = keys.ssh.shinidev ++ keys.ssh.home-station;
+    publicKeys = keys.ssh.shinidev ++ keys.ssh.home-station ++ keys.ssh.home-server;
     armor = true;
   };
 }

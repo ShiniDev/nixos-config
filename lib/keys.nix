@@ -11,6 +11,10 @@
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKns1cmatslfrLqtYGzcso0yBijYpAS4rT/4JfBdgKm9 root@home-station
 "
         ];
+        home-server = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF/6dVNENmnVSmE5E8HHW515Jek03kmKTltuwre3K4RO root@home-server
+"
+        ];
       };
     };
   };
