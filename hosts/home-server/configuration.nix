@@ -11,6 +11,7 @@
         core
         apps
         networking
+        minecraft
       ]);
   };
 

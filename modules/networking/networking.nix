@@ -8,6 +8,7 @@
         enable = true;
         allowedTCPPorts = [
           40218
+          50000
           80
           443
         ];

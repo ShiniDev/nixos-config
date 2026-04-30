@@ -8,7 +8,11 @@
       inputs.disko.nixosModules.disko
       inputs.stylix.nixosModules.stylix
       inputs.agenix.nixosModules.default
+      inputs.nix-minecraft.nixosModules.minecraft-servers
       { environment.systemPackages = [ inputs.agenix.packages.${systems.default}.default ]; }
+      {
+        nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+      }
     ];
     homeManagerDefaults = {
       home-manager.useGlobalPkgs = true;
