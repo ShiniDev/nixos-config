@@ -12,6 +12,7 @@
         apps
         networking
         minecraft
+        sandbox
       ]);
   };
 

@@ -13,6 +13,7 @@
         graphical
         networking
         shinidev-home
+        sandbox
       ]);
   };
 
