@@ -12,6 +12,7 @@
           enable = true;
           package = pkgs.neoforgeServers.neoforge-1_21_1;
           serverProperties = {
+            allow-flight = true;
             server-port = 50000;
             difficulty = "hard";
             gamemode = "survival";
