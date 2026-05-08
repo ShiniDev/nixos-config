@@ -14,6 +14,7 @@
           serverProperties = {
             allow-flight = true;
             server-port = 50000;
+            level-seed = "101694099717";
             difficulty = "hard";
             gamemode = "survival";
             max-players = 5;
