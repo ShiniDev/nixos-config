@@ -8,24 +8,38 @@
         enable = true;
         eula = true;
         openFirewall = true;
-        servers.tensura-custom-modpack = {
-          enable = true;
-          package = pkgs.neoforgeServers.neoforge-1_21_1;
-          serverProperties = {
-            allow-flight = true;
-            server-port = 50000;
-            level-seed = "101694099717";
-            difficulty = "hard";
-            gamemode = "survival";
-            max-players = 5;
-            motd = "NixOS Tensura Minecraft server!";
-            sync-chunk-writes = false;
-            simulation-distance = 10;
-            view-distance = 16;
-            online-mode = false;
+        servers.tensura-custom-modpack =
+          let
+            modpack = pkgs.fetchPackwizModpack {
+              url = "https://raw.githubusercontent.com/ShiniDev/minecraft-tensura-packwiz/refs/heads/main/pack.toml";
+              packHash = "";
+            };
+          in
+          {
+            enable = true;
+            package = pkgs.neoforgeServers.neoforge-1_21_1;
+            symlinks = {
+              "mods" = "${modpack}/mods";
+            };
+            files = {
+              "config" = "${modpack}/config";
+            };
+            serverProperties = {
+              allow-flight = true;
+              server-port = 50000;
+              level-seed = "101694099717";
+              difficulty = "hard";
+              gamemode = "survival";
+              max-players = 5;
+              max-tick-time = -1;
+              motd = "NixOS Tensura Minecraft server!";
+              sync-chunk-writes = false;
+              simulation-distance = 6;
+              view-distance = 10;
+              online-mode = false;
+            };
+            jvmOpts = "-Xms8G -Xmx8G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem";
           };
-          jvmOpts = "-Xms8G -Xmx8G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true";
-        };
       };
     };
 }
