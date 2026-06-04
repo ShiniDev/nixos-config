@@ -74,6 +74,7 @@
           "extensions.experimental.affinity" = {
             "asvetliakov.vscode-neovim" = 1;
           };
+          "java.server.launchMode" = "LightWeight";
         };
       };
 

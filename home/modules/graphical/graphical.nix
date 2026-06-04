@@ -79,6 +79,8 @@
             ];
             "6" = [
               { app_id = "org.prismlauncher.PrismLauncher"; }
+            ];
+            "7" = [
               { class = "Minecraft"; }
             ];
           };

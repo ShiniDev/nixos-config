@@ -7,6 +7,8 @@
         p7zip
         unzip
         tmux
+        discord
+        packwiz
       ];
       services.nginx = {
         enable = true;
