@@ -4,10 +4,6 @@
     { pkgs, ... }:
     {
       # BROWSERS
-      programs.firefox = {
-        enable = true;
-        nativeMessagingHosts = [ pkgs.keepassxc ];
-      };
       programs.chromium = {
         enable = true;
         package = pkgs.google-chrome;
@@ -29,9 +25,10 @@
       # DEVELOPMENT
       programs.vscode = {
         enable = true;
-        package = pkgs.vscodium;
+        package = pkgs.vscode;
         mutableExtensionsDir = false;
 
+        # Convert capitals to lowercase
         profiles.default.extensions = with pkgs.vscode-extensions; [
           jnoortheen.nix-ide
           asvetliakov.vscode-neovim
@@ -43,6 +40,7 @@
           vscjava.vscode-maven
           vscjava.vscode-gradle
           vscjava.vscode-java-dependency
+          james-yu.latex-workshop
         ];
 
         profiles.default.userSettings = {
