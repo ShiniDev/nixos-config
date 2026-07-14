@@ -26,79 +26,12 @@
       programs.vscode = {
         enable = true;
         package = pkgs.vscode;
-        mutableExtensionsDir = false;
-
-        # Convert capitals to lowercase
-        profiles.default.extensions = with pkgs.vscode-extensions; [
-          jnoortheen.nix-ide
-          asvetliakov.vscode-neovim
-          dracula-theme.theme-dracula
-          redhat.java
-          vscjava.vscode-gradle
-          vscjava.vscode-java-debug
-          vscjava.vscode-java-test
-          vscjava.vscode-maven
-          vscjava.vscode-gradle
-          vscjava.vscode-java-dependency
-          james-yu.latex-workshop
-        ];
-
-        profiles.default.userSettings = {
-          "workbench.colorTheme" = "Dracula Theme";
-          "editor.formatOnSave" = true;
-          "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
-          "nix.enableLanguageServer" = true;
-          "nix.serverPath" = "nixd";
-          "nix.serverSettings" = {
-            "nixd" = {
-              "nixpkgs" = {
-                "expr" = "import (builtins.getFlake (builtins.toString /home/shinidev/nixos)).inputs.nixpkgs {}";
-              };
-              "formatting" = {
-                "command" = [ "nixfmt" ];
-              };
-              "options" = {
-                "nixos" = {
-                  "expr" =
-                    "(builtins.getFlake (builtins.toString /home/shinidev/nixos)).nixosConfigurations.home-station.options";
-                };
-                "home-manager" = {
-                  "expr" =
-                    "(builtins.getFlake (builtins.toString /home/shinidev/nixos)).nixosConfigurations.home-station.options.home-manager.users.type.getSubOptions []";
-                };
-              };
-            };
-          };
-          "extensions.experimental.affinity" = {
-            "asvetliakov.vscode-neovim" = 1;
-          };
-          "java.server.launchMode" = "LightWeight";
-        };
-      };
-
-      # COMMUNICATION
-      programs.vesktop = {
-        enable = true;
-        settings = {
-          appBadge = false;
-          arRPC = true;
-          checkUpdates = false;
-          customTitleBar = false;
-          disableMinSize = true;
-          minimizeToTray = false;
-          tray = false;
-          splashBackground = "#000000";
-          splashColor = "#ffffff";
-          splashTheming = true;
-          staticTitle = true;
-          hardwareAcceleration = true;
-          discordBranch = "stable";
-        };
       };
 
       # GUI & WORKFLOW PACKAGES
       home.packages = with pkgs; [
         prismlauncher
+        discord
         thunar
         keepassxc
         evince
