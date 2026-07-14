@@ -75,7 +75,7 @@
             ];
             "5" = [
               { app_id = "org.telegram.desktop"; }
-              { app_id = "vesktop"; }
+              { app_id = "discord"; }
             ];
             "6" = [
               { app_id = "org.prismlauncher.PrismLauncher"; }
@@ -101,6 +101,10 @@
             "XF86MonBrightnessDown" = "exec brightnessctl -e4 -n2 set 5%-";
           };
           input = {
+            "type:pointer" = {
+              accel_profile = "flat";
+              pointer_accel = "0.75";
+            };
             "type:touchpad" = {
               natural_scroll = "enabled";
               tap = "enabled";
@@ -111,7 +115,7 @@
             { command = "noctalia-shell"; }
             { command = "mako"; }
             { command = "kitty"; }
-            { command = "google-chrome"; }
+            { command = "google-chrome https://app.simplenote.com"; }
           ];
         };
       };
