@@ -9,6 +9,11 @@
         tmux
         packwiz
       ];
+
+      services.cockpit = {
+        enable = true;
+      };
+
       services.nginx = {
         enable = true;
         virtualHosts = {

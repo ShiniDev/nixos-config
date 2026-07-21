@@ -13,5 +13,8 @@
           443
         ];
       };
+      systemd.services = {
+        NetworkManager-wait-online.enable = false;
+      };
     };
 }
