@@ -31,7 +31,7 @@
           {
             "clockColor": "none",
             "customFont": "",
-            "formatHorizontal": "HH:mm:ss ddd, MMM dd",
+            "formatHorizontal": "HH:mm:ss ddd, MMM dd | yyyy-MM-dd",
             "formatVertical": "HH mm - dd MM",
             "id": "Clock",
             "tooltipFormat": "HH:mm ddd, MMM dd",
@@ -66,6 +66,7 @@
             "maxWidth": 300,
             "scrollingMode": "hover",
             "showIcon": true,
+            "showText": true,
             "textColor": "none",
             "useFixedWidth": false
           }
@@ -137,6 +138,7 @@
           {
             "colorizeDistroLogo": false,
             "colorizeSystemIcon": "none",
+            "colorizeSystemText": "none",
             "customIconPath": "",
             "enableColorization": false,
             "icon": "noctalia",
@@ -217,7 +219,8 @@
           "Del"
         ]
       },
-      "reverseScroll": false
+      "reverseScroll": false,
+      "smoothScrollEnabled": true
     },
     "ui": {
       "fontDefault": "Sans Serif",
@@ -237,6 +240,7 @@
       "name": "Kennesaw, Georgia",
       "weatherEnabled": true,
       "weatherShowEffects": true,
+      "weatherTaliaMascotAlways": false,
       "useFahrenheit": false,
       "use12hourFormat": false,
       "showWeekNumberInCalendar": false,
@@ -245,7 +249,8 @@
       "analogClockInCalendar": false,
       "firstDayOfWeek": -1,
       "hideWeatherTimezone": false,
-      "hideWeatherCityName": false
+      "hideWeatherCityName": false,
+      "autoLocate": false
     },
     "calendar": {
       "cards": [
@@ -272,6 +277,7 @@
       "showHiddenFiles": false,
       "viewMode": "single",
       "setWallpaperOnAllMonitors": true,
+      "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
       "fillColor": "#000000",
       "useSolidColor": false,
@@ -455,7 +461,6 @@
       "indicatorOpacity": 0.6
     },
     "network": {
-      "airplaneModeEnabled": false,
       "bluetoothRssiPollingEnabled": false,
       "bluetoothRssiPollIntervalMs": 60000,
       "networkPanelView": "wifi",
@@ -636,7 +641,7 @@
     "idle": {
       "enabled": true,
       "screenOffTimeout": 60,
-      "lockTimeout": 300,
+      "lockTimeout": 1800,
       "suspendTimeout": 1800,
       "fadeDuration": 5,
       "screenOffCommand": "",
@@ -740,14 +745,14 @@
         "y": 0,
         "active": true,
         "focused": true,
-        "current_workspace": "5"
+        "current_workspace": "1"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1774549769000
+      "lastSeenTs": 1783979230000
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.2"
+      "lastSeenVersion": "v4.7.8"
     },
     "colorSchemesList": {
       "schemes": [
