@@ -38,6 +38,11 @@
       };
       users.groups.shinidev.gid = 1000;
 
+      # SECURITY
+      security.sudo.extraConfig = ''
+        Defaults    timestamp_timeout=30
+      '';
+
       # ENVS
       environment.variables = {
         EDITOR = "nvim";
