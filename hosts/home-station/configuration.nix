@@ -23,5 +23,11 @@
       system.stateVersion = "25.11"; # DO NOT CHANGE
       boot.kernelPackages = pkgs.linuxPackages_latest;
       networking.hostName = "home-station"; # Define your hostname.
+      hardware.graphics.enable = true;
+      services.xserver.videoDriver = [ "nvidia" ];
+      hardware.nvidia.prime = {
+        nvidiaBusId = "PCI:1@0:0:0";
+        amdgpuBusId = "PCI:5@0:0:0";
+      };
     };
 }
