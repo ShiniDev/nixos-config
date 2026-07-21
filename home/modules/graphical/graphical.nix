@@ -29,8 +29,8 @@
         package = null;
         extraConfig = ''
           hide_edge_borders --i3 smart
-          smart_borders on
-          corner_radius 20
+          smart_borders off
+          corner_radius 0
           blur enable
           blur_passes 2
           shadows enable
@@ -39,15 +39,15 @@
         config = rec {
           modifier = "Mod4";
           terminal = "kitty";
-          workspaceLayout = "default";
+          workspaceLayout = "tabbed";
           output = {
             "eDP-1" = {
               scale = "1";
             };
           };
           gaps = {
-            outer = 10;
-            inner = 5;
+            outer = 0;
+            inner = 0;
           };
           window = {
             titlebar = false;
@@ -67,21 +67,26 @@
             "3" = [
               { app_id = "codium"; }
               { app_id = "code"; }
+              { app_id = "jetbrains-idea"; }
             ];
             "4" = [
               { app_id = "org.gnome.Evince"; }
               { app_id = "com.github.johnfactotum.Foliate"; }
               { app_id = "org.keepassxc.KeePassXC"; }
+              { app_id = "obsidian"; }
             ];
             "5" = [
               { app_id = "org.telegram.desktop"; }
               { app_id = "discord"; }
+              { app_id = "com.obsproject.Studio"; }
+              { app_id = "vesktop"; }
             ];
             "6" = [
               { app_id = "org.prismlauncher.PrismLauncher"; }
+              { app_id = "Minecraft"; }
             ];
             "7" = [
-              { class = "Minecraft"; }
+              { class = "steam"; }
             ];
           };
           bars = [ ];
@@ -116,6 +121,8 @@
             { command = "mako"; }
             { command = "kitty"; }
             { command = "google-chrome https://app.simplenote.com"; }
+            { command = "qpwgraph -m -a ~/obs-audio-route-to-discord.qpwgraph"; }
+            { command = "obsidian"; }
           ];
         };
       };
@@ -124,7 +131,6 @@
       home.packages = with pkgs; [
         brightnessctl
         bibata-cursors
-        wofi
         mako
       ];
     };
