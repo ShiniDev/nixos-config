@@ -8,7 +8,12 @@
         unzip
         tmux
         packwiz
+        wtype
+        imagemagick
+        ghostscript
       ];
+
+      programs.ydotool.enable = true;
 
       services.cockpit = {
         enable = true;
