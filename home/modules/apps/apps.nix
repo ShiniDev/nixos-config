@@ -28,15 +28,6 @@
         package = pkgs.vscode-fhs;
       };
 
-      programs.steam = {
-        enable = true;
-      };
-
-      programs.obs-studio = {
-        enable = true;
-        enableVirtualCamera = true;
-      };
-
       # GUI & WORKFLOW PACKAGES
       home.packages = with pkgs; [
         prismlauncher

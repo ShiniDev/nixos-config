@@ -12,5 +12,12 @@
       home.homeDirectory = "/home/shinidev";
       home.stateVersion = "25.11";
     };
+    programs.obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+    };
+    programs.steam = {
+      enable = true;
+    };
   };
 }
