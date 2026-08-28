@@ -32,17 +32,20 @@
         enable = true;
         enableDefaultConfig = false;
         settings = {
-          "github.com" = {
-            identityFile = "~/.ssh/id_ed25519_home-stn-01";
-          };
           "*" = {
             compression = true;
             addKeysToAgent = "1h";
+            identityFile = "~/.ssh/id_ed25519_home-stn-01";
           };
           "home-server" = {
             hostname = "192.168.0.10";
             user = "shinidev";
             port = 40218;
+          };
+          "oracle-cloud" = {
+            hostname = "129.153.40.200";
+            user = "opc";
+            port = 22;
           };
         };
       };
