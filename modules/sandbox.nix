@@ -8,12 +8,11 @@
         unzip
         tmux
         packwiz
-        wtype
         imagemagick
         ghostscript
+        llama-cpp # Added to try to run local llms
+        gcc
       ];
-
-      programs.ydotool.enable = true;
 
       services.cockpit = {
         enable = true;
