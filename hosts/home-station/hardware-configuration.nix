@@ -28,7 +28,7 @@
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
-        device = "/dev/mapper/luks_root";
+        device = "/dev/mapper/luks_nixos_root";
         fsType = "ext4";
       };
 
@@ -51,8 +51,8 @@
       ];
 
       boot.initrd.luks.devices = {
-        "luks_root" = {
-          device = "/dev/mapper/vg_machine-lv_root";
+        "luks_nixos_root" = {
+          device = "/dev/mapper/vg_machine-lv_nixos_root";
         };
         "luks_home" = {
           device = "/dev/mapper/vg_machine-lv_home";

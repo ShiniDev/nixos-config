@@ -14,6 +14,7 @@
         networking
         shinidev-home
         sandbox
+        cleaning
       ]);
   };
 

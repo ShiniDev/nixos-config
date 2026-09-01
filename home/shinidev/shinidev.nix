@@ -19,5 +19,6 @@
     programs.steam = {
       enable = true;
     };
+    programs.nh.flake = "/home/shinidev/nixos";
   };
 }
