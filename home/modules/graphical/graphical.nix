@@ -8,20 +8,12 @@
       ...
     }:
     {
-      imports = [ inputs.noctalia.homeModules.default ];
-
       # THEME INTEGRATIONS
       stylix.targets.kitty.enable = true;
       stylix.targets.starship.enable = true;
       stylix.targets.sway.enable = true;
       stylix.targets.mako.enable = true;
       stylix.targets.wofi.enable = true;
-
-      # SHELL & BARS
-      programs.noctalia-shell = {
-        enable = true;
-        settings = (builtins.fromJSON (builtins.readFile ../.config/noctalia.json)).settings;
-      };
 
       # WAYLAND COMPOSITOR: SWAY
       wayland.windowManager.sway = {
@@ -92,7 +84,6 @@
           bars = [ ];
           keybindings = lib.mkOptionDefault {
             "${modifier}+Shift+r" = "reload";
-            "${modifier}+d" = "exec noctalia-shell ipc call launcher toggle";
             "Print" = "exec screenshot-menu";
             "XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
             "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
@@ -117,7 +108,6 @@
             };
           };
           startup = [
-            { command = "noctalia-shell"; }
             { command = "mako"; }
             { command = "kitty"; }
             { command = "google-chrome https://app.simplenote.com"; }
