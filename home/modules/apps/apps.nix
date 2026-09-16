@@ -6,8 +6,7 @@
       # BROWSERS
       programs.chromium = {
         enable = true;
-        package = pkgs.google-chrome;
-        nativeMessagingHosts = [ pkgs.keepassxc ];
+        package = pkgs.chromium;
       };
 
       # TERMINAL
@@ -35,9 +34,7 @@
         vesktop
         obsidian
         qpwgraph
-        thunar
         keepassxc
-        jetbrains.idea
         evince
         foliate
         telegram-desktop
