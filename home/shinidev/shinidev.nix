@@ -7,6 +7,7 @@
         inputs.self.homeModules.core
         inputs.self.homeModules.graphical
         inputs.self.homeModules.apps
+	inputs.self.homeModules.niri
       ];
       home.username = "shinidev";
       home.homeDirectory = "/home/shinidev";
