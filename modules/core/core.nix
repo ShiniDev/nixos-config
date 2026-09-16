@@ -64,16 +64,9 @@
       # DEFAULT PACKAGES TO INSTALL
       environment.systemPackages = with pkgs; [
         vim
-        neovim
-        htop
-        wget
         git
-        neovim
         fastfetch
         curl
-        tree
-        javaPackages.compiler.temurin-bin.jdk-25
-        python3
       ];
 
       # SERVICES
