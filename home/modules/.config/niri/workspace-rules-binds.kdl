@@ -1,0 +1,77 @@
+workspace "terminal" // 1
+workspace "browser" // 2
+workspace "development" // 3
+workspace "documents" // 4
+workspace "media" // 5
+workspace "games" // 6
+
+binds { 
+    Mod+1 { focus-workspace "terminal"; }
+    Mod+2 { focus-workspace "browser"; }
+    Mod+3 { focus-workspace "development"; }
+    Mod+4 { focus-workspace "documents"; }
+    Mod+5 { focus-workspace "media"; }
+    Mod+6 { focus-workspace "games"; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace "terminal"; }
+    Mod+Shift+2 { move-column-to-workspace "browser"; }
+    Mod+Shift+3 { move-column-to-workspace "development"; }
+    Mod+Shift+4 { move-column-to-workspace "documents"; }
+    Mod+Shift+5 { move-column-to-workspace "media"; }
+    Mod+Shift+6 { move-column-to-workspace "games"; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+}
+
+window-rule {
+    open-maximized true
+}
+
+window-rule {
+    match app-id="Alacritty"
+    open-on-workspace "terminal"
+    open-maximized false
+}
+
+window-rule {
+    match app-id="chromium-browser"
+    open-on-workspace "browser"
+}
+
+window-rule {
+    match app-id="codium"
+    open-on-workspace "development"
+}
+
+window-rule {
+    match app-id="org.gnome.Evince"
+    open-on-workspace "documents"
+}
+
+window-rule {
+    match app-id="com.github.johnfactotum.Foliate"
+    open-on-workspace "documents"
+}
+
+window-rule {
+    match app-id="md.obsidian.Obsidian"
+    open-on-workspace "documents"
+}
+
+window-rule {
+    match app-id="org.keepassxc.KeePassXC"
+    open-on-workspace "documents"
+}
+
+window-rule {
+    match app-id="vesktop"
+    open-on-workspace "media"
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    open-on-workspace "media"
+}

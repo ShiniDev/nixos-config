@@ -5,6 +5,9 @@
       systemd.enable = true;
       xwaylandSatellitePackage = pkgs.xwayland-satellite;
     };
+    # I might just add a symlink from this project to the niri config directory
+    # that way I can change stuffs without rebuilding nix.
+    # xdg.configFile."niri/config.kdl".source = ../.config/config.kdl;
     programs.waybar.enable = true;
     programs.alacritty.enable = true; # Super+T in the default setting (terminal)
     programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)

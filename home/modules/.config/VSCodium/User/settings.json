@@ -1,0 +1,41 @@
+{
+    "editor.suggestSelection": "first",
+    "explorer.compactFolders": false,
+    "editor.codeActionsOnSave": null,
+    "workbench.editor.enablePreview": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontFamily": "pango",
+    "editor.fontLigatures": true,
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDragAndDrop": false,
+    "vim.smartRelativeLine": true,
+    "explorer.confirmDelete": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.semanticHighlighting.enabled": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "workbench.colorTheme": "Dark+",
+    "window.menuBarVisibility": "toggle",
+    "editor.formatOnSave": true,
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    "nix.serverSettings": {
+        "nixd": {
+            "nixpkgs": {
+                "expr": "import (builtins.getFlake (builtins.toString /home/shinidev/nixos)).inputs.nixpkgs {}"
+            },
+            "formatting": {
+                "command": [
+                    "nixfmt"
+                ]
+            },
+            "options": {
+                "nixos": {
+                    "expr": "(builtins.getFlake (builtins.toString /home/shinidev/nixos)).nixosConfigurations.home-station.options"
+                },
+                "home-manager": {
+                    "expr": "(builtins.getFlake (builtins.toString /home/shinidev/nixos)).nixosConfigurations.home-station.options.home-manager.users.type.getSubOptions []"
+                }
+            }
+        }
+    },
+}
