@@ -11,7 +11,6 @@
         core
         apps
         networking
-        minecraft
         sandbox
       ]);
   };
