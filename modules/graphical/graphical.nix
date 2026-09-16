@@ -2,17 +2,6 @@
 {
   flake.nixosModules.graphical =
     { pkgs, ... }:
-    let
-      swayConfig = pkgs.writeText "greetd-sway-config" ''
-        # `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
-        exec "${pkgs.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
-        bindsym Mod4+shift+e exec swaynag \
-          -t warning \
-          -m 'What do you want to do?' \
-          -b 'Poweroff' 'systemctl poweroff' \
-          -b 'Reboot' 'systemctl reboot'
-      '';
-    in
     {
       # Audio
       services.pipewire = {
@@ -32,6 +21,8 @@
         enable = true;
         extraPortals = with pkgs; [
           xdg-desktop-portal-wlr
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal-gnome
         ];
         wlr.enable = true;
       };
@@ -39,17 +30,6 @@
       fonts.packages = with pkgs; [
         nerd-fonts.jetbrains-mono
       ];
-
-      # Window Manager
-      programs.sway = {
-        enable = true;
-        package = pkgs.swayfx;
-        wrapperFeatures.gtk = true;
-        xwayland.enable = true;
-        extraPackages = with pkgs; [
-          brightnessctl
-        ];
-      };
 
       services.pipewire.extraConfig.pipewire."10-obs-virtual-audio" = {
         "context.objects" = [
@@ -68,19 +48,6 @@
           }
         ];
       };
-      services.greetd = {
-        enable = true;
-        settings = {
-          default_session = {
-            command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
-          };
-        };
-      };
-
-      environment.etc."greetd/environments".text = ''
-        sway
-        bash
-      '';
       security.polkit.enable = true;
       services.gnome.gnome-keyring.enable = true;
 

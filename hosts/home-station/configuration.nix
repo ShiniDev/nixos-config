@@ -11,6 +11,7 @@
         core
         apps
         graphical
+	display-manager
         networking
         shinidev-home
         sandbox
