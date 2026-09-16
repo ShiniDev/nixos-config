@@ -57,9 +57,6 @@
       nix.nixPath = [
         "nixpkgs=${inputs.nixpkgs}"
       ];
-      nixpkgs.config = {
-        allowUnfree = true;
-      };
 
       # DEFAULT PACKAGES TO INSTALL
       environment.systemPackages = with pkgs; [
