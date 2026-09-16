@@ -9,28 +9,22 @@
         package = pkgs.chromium;
       };
 
-      # TERMINAL
-      programs.kitty = {
-        enable = true;
-        settings = {
-          scrollback_lines = 10000;
-          enable_audio_bell = false;
-          update_check_interval = 0;
-          background_blur = 5;
-          term = "xterm-256color";
-        };
-      };
-
       # DEVELOPMENT
-      programs.vscode = {
+      programs.vscodium = {
         enable = true;
-        package = pkgs.vscode-fhs;
+        package = pkgs.vscodium-fhs;
+        profiles.default = {
+          extensions = with pkgs.vscode-extensions; [
+            jnoortheen.nix-ide
+            vscodevim.vim
+            # v1hz.kdl Don't uncomment, not in pkgs
+          ];
+        };
       };
 
       # GUI & WORKFLOW PACKAGES
       home.packages = with pkgs; [
         prismlauncher
-        discord
         vesktop
         obsidian
         qpwgraph
@@ -38,6 +32,7 @@
         evince
         foliate
         telegram-desktop
+        vlc
         (texliveSmall.withPackages (
           ps: with ps; [
             latexmk
