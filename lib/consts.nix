@@ -6,7 +6,6 @@
     };
     systemModulesDefaults = [
       inputs.disko.nixosModules.disko
-      inputs.stylix.nixosModules.stylix
       inputs.agenix.nixosModules.default
       { environment.systemPackages = [ inputs.agenix.packages.${systems.default}.default ]; }
     ];
