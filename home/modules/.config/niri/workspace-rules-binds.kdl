@@ -28,6 +28,7 @@ binds {
 
 window-rule {
     open-maximized true
+    draw-border-with-background false
 }
 
 window-rule {

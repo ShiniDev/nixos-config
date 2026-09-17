@@ -4,7 +4,7 @@
     "editor.codeActionsOnSave": null,
     "workbench.editor.enablePreview": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "editor.fontFamily": "pango",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontLigatures": true,
     "editor.lineNumbers": "relative",
     "explorer.confirmDragAndDrop": false,

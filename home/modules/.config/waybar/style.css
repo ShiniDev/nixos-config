@@ -1,0 +1,57 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Roboto, FontAwesome, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #DAE0F2;
+    /* --color-1: #DAE0F2;
+    --color-2: rgba(41, 49, 50, 0.5);
+    --color-3: #677DB7; */
+}
+
+
+window#waybar {
+    background-color: rgba(41, 49, 50, 0.5);
+}
+
+.modules-right {
+    margin-right: 2px;
+    margin-left: 40px;
+    padding: 0 2px;
+}
+
+.modules-right * {
+    /* background-color: rgba(11, 13, 13, 0.572); */
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.modules-left {
+    padding: 0;
+}
+
+.modules-center {
+    padding: 0 10px;
+}
+
+#custom-nixos {
+    margin-left: 5px;
+    padding: 0 10px;
+    font-size: 20px;
+    transition: color .5s;
+    color: #DAE0F2;
+    transition: linear 0.5s;
+}
+
+#custom-nixos:hover {
+    color: #677DB7;
+}
+
+#clock {
+    padding-right: 0px;
+    margin-right: -4px;
+}
+
+#clock.ph {
+    padding-left: 0;
+    margin-left: 0;
+}

@@ -1,0 +1,3 @@
+spawn-sh-at-startup "swaybg -i /home/shinidev/Documents/wallhaven-x8ye3z.jpg -m fill"
+spawn-sh-at-startup "systemctl --user restart waybar.service" 
+spawn-sh-at-startup "swayidle -w timeout 300 'niri msg action power-off-monitors'"
