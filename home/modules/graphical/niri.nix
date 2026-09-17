@@ -17,6 +17,18 @@
     services.polkit-gnome.enable = true; # polkit
     home.packages = with pkgs; [
       swaybg # wallpaper
+      pavucontrol
+      nerd-fonts.jetbrains-mono
+      brightnessctl
     ];
+    # PKGS to be able to screen share.
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-gnome
+      ];
+    };
   };
 }
