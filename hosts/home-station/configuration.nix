@@ -10,8 +10,8 @@
         home-station
         core
         apps
-        graphical
-	display-manager
+        audio
+        display-manager
         networking
         shinidev-home
         sandbox
