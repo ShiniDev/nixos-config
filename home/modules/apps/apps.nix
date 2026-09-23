@@ -17,6 +17,13 @@
           extensions = with pkgs.vscode-extensions; [
             jnoortheen.nix-ide
             vscodevim.vim
+            llvm-vs-code-extensions.vscode-clangd
+            xaver.clang-format
+            vadimcn.vscode-lldb
+            ms-vscode.makefile-tools
+            ms-vscode.cmake-tools
+            usernamehw.errorlens
+            mkhl.direnv
             # v1hz.kdl Don't uncomment, not in pkgs
           ];
         };
@@ -33,6 +40,7 @@
         foliate
         telegram-desktop
         vlc
+        obs-studio
         (texliveSmall.withPackages (
           ps: with ps; [
             latexmk
