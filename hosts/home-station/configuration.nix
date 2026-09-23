@@ -31,6 +31,10 @@
         nvidiaBusId = "PCI:1@0:0:0";
         amdgpuBusId = "PCI:5@0:0:0";
       };
+      nix.registry.system-flake.to = {
+        type = "path";
+        path = "/home/shinidev/nixos";
+      };
       environment.systemPackages = with pkgs; [
         vulkan-headers
       ];

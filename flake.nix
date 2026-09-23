@@ -31,6 +31,7 @@
         ./lib
         ./hosts
         ./home
+        ./dev-shells
         ./flake-parts.nix
       ]
     );

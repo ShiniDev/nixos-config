@@ -1,7 +1,7 @@
 { ... }:
 {
   flake = {
-    keys = rec {
+    keys = {
       ssh = {
         shinidev = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ3+ZgIr4gkofsH5gQYKb60t2Stx5WWsQbhAzmW6Emxm shinidev@home-station
