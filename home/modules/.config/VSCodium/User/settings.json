@@ -38,4 +38,12 @@
             }
         }
     },
+    "nix.hiddenLanguageServerErrors": [
+        "textDocument/formatting",
+        "textDocument/documentLink",
+        "textDocument/inlayHint",
+        "textDocument/foldingRange",
+        "textDocument/documentSymbol",
+        "textDocument/definition"
+    ],
 }
