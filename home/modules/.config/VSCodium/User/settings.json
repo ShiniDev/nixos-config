@@ -5,7 +5,7 @@
     "workbench.editor.enablePreview": false,
     "security.workspace.trust.untrustedFiles": "open",
     "editor.fontFamily": "JetBrainsMono Nerd Font",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.lineNumbers": "relative",
     "explorer.confirmDragAndDrop": false,
     "vim.smartRelativeLine": true,
@@ -45,5 +45,11 @@
         "textDocument/foldingRange",
         "textDocument/documentSymbol",
         "textDocument/definition"
+    ],
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "clangd.fallbackFlags": [
+        "-std=c23"
     ],
 }
