@@ -1,6 +1,6 @@
-{ self, inputs, ... }:
+{ inputs, ... }:
 let
-  system = self.consts.systems.default;
+  system = "x86_64-linux";
   pkgs = import inputs.nixpkgs { inherit system; };
 in
 {
