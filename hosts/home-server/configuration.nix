@@ -1,19 +1,28 @@
 { inputs, self, ... }:
 {
-  flake.nixosConfigurations.home-server = inputs.nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit inputs; };
-    system = "x86_64-linux";
-    modules =
-      self.consts.systemModulesDefaults
-      ++ (with self.nixosModules; [
+  flake.nixosConfigurations.home-server = inputs.nixpkgs.lib.nixosSystem (
+    let
+      system = "x86_64-linux";
+      flakeInputs = [
+        inputs.disko.nixosModules.disko
+        inputs.agenix.nixosModules.default
+        { environment.systemPackages = [ inputs.agenix.packages.${system}.default ]; }
+      ];
+      myModules = with self.nixosModules; [
         home-server
         home-server-hardware
         core
         apps
         networking
         sandbox
-      ]);
-  };
+      ];
+    in
+    {
+      inherit system;
+      specialArgs = { inherit inputs; };
+      modules = flakeInputs ++ myModules;
+    }
+  );
 
   flake.nixosModules.home-server =
     { pkgs, ... }:
