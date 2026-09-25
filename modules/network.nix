@@ -1,9 +1,8 @@
 { ... }:
 {
-  flake.nixosModules.networking =
+  flake.nixosModules.network =
     { ... }:
     {
-      networking.networkmanager.enable = true;
       networking.firewall = {
         enable = true;
         allowedTCPPorts = [
@@ -12,6 +11,9 @@
           80
           443
           8080
+        ];
+        allowedUDPPorts = [
+          27015
         ];
       };
       systemd.services = {

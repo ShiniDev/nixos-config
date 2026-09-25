@@ -1,10 +1,11 @@
 { ... }:
 {
-  flake.nixosModules.apps =
+  flake.nixosModules.pretty-shell =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        atuin
+        atuin # Command history
+        rsync # Alternative to cp
       ];
       programs = {
         starship.enable = true;
@@ -27,9 +28,6 @@
             # --- Tool Integrations ---
             if command -v atuin >/dev/null 2>&1; then
               eval "$(atuin init bash)"
-            fi
-            if command -v nvim >/dev/null 2>&1; then
-              alias vim='nvim'
             fi
             if command -v starship >/dev/null 2>&1; then
               eval "$(starship init bash)"

@@ -1,5 +1,5 @@
 { ... }: {
-  flake.nixosModules.display-manager = { pkgs, ... }: {
+  flake.nixosModules.display-manager = { ... }: {
     services.displayManager.regreet = {
       enable = true;
     };
