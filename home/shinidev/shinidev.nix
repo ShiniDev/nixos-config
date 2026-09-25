@@ -1,6 +1,10 @@
 { inputs, ... }:
 {
   flake.nixosModules.shinidev-home = { ... }: {
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
+    home-manager.backupFileExtension = "backup";
+    home-manager.extraSpecialArgs = { inherit inputs; };
     home-manager.users.shinidev =
       let
         my = inputs.self.homeModules;
