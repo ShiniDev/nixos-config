@@ -17,6 +17,7 @@
 
         self.nixosModules.system
         boot-loader-systemd
+        users
         network
         ssh
         pretty-shell
@@ -36,24 +37,12 @@
   );
 
   flake.nixosModules.home-station =
-    { config, pkgs, ... }:
+    { pkgs, ... }:
     {
       system.stateVersion = "25.11"; # DO NOT CHANGE
       boot.kernelPackages = pkgs.linuxPackages_latest;
       networking.hostName = "home-station"; # Define your hostname.
       time.timeZone = "America/New_York";
-
-      age.secrets.shinidev-password.file = ../../secrets/shinidev-password.age;
-      users.mutableUsers = false;
-      users.users.shinidev = {
-        uid = 1000;
-        group = "shinidev";
-        isNormalUser = true;
-        extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-        openssh.authorizedKeys.keys = self.keys.ssh.shinidev ++ self.keys.ssh.home-station;
-        hashedPasswordFile = config.age.secrets.shinidev-password.path;
-      };
-      users.groups.shinidev.gid = 1000;
 
       hardware.graphics.enable = true;
       services.xserver.videoDriver = [ "nvidia" ];

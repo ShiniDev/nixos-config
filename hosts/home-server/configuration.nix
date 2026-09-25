@@ -11,10 +11,13 @@
       myModules = with self.nixosModules; [
         home-server
         home-server-hardware
-        core
-        apps
-        networking
-        sandbox
+
+        self.nixosModules.system
+        boot-loader-systemd
+        users
+        network
+        pretty-shell
+        ssh
       ];
     in
     {
@@ -35,5 +38,6 @@
         "consoleblank=5"
       ];
       networking.hostName = "home-server"; # Define your hostname.
+      time.timeZone = "America/New_York";
     };
 }
