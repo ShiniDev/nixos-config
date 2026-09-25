@@ -86,3 +86,18 @@ window-rule {
     match app-id="Minecraft*"
     open-on-workspace "games"
 }
+
+window-rule {
+    match app-id="steam"
+    open-on-workspace "games"
+}
+
+window-rule {
+    match app-id="net.lutris.Lutris"
+    open-on-workspace "games"
+}
+
+window-rule {
+    match app-id="steam_app_default"
+    open-on-workspace "games"
+}
