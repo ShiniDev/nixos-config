@@ -1,23 +1,39 @@
 { ... }:
 {
   flake.nixosModules.network =
-    { ... }:
     {
-      networking.firewall = {
-        enable = true;
-        allowedTCPPorts = [
-          40218
-          50000
-          80
-          443
-          8080
-        ];
-        allowedUDPPorts = [
-          27015
-        ];
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
+    let
+      cfg = config.this.network;
+    in
+    {
+      options.this.network = {
+        allowedTCPPorts = lib.mkOption {
+          type = lib.types.listOf lib.types.int;
+          default = [ ];
+        };
+        allowedUDPPorts = lib.mkOption {
+          type = lib.types.listOf lib.types.int;
+          default = [ ];
+        };
       };
-      systemd.services = {
-        NetworkManager-wait-online.enable = false;
+      config = {
+        networking.firewall = {
+          enable = true;
+          allowedTCPPorts = cfg.allowedTCPPorts;
+          allowedUDPPorts = cfg.allowedUDPPorts;
+        };
+        systemd.services = {
+          NetworkManager-wait-online.enable = false;
+        };
+        environment.systemPackages = with pkgs; [
+          wireguard-tools
+        ];
+        networking.wireguard.enable = true;
       };
     };
 }

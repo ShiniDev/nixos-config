@@ -6,6 +6,7 @@
       flakeInputs = with inputs; [
         microvm.nixosModules.host
         agenix.nixosModules.default
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
         {
           environment.systemPackages = [ agenix.packages.${system}.default ];
@@ -22,6 +23,7 @@
         ssh
         pretty-shell
         vms
+        sops
 
         audio
         display-manager
@@ -50,6 +52,10 @@
         nvidiaBusId = "PCI:1@0:0:0";
         amdgpuBusId = "PCI:5@0:0:0";
       };
+
+      this.network.allowedUDPPorts = [
+        27015 # Left 4 Dead Lan Port
+      ];
 
       # Makes our flake accessible via system-flake
       nix.registry.system-flake.to = {
