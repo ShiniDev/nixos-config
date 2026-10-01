@@ -25,6 +25,7 @@
             usernamehw.errorlens
             mkhl.direnv
             # v1hz.kdl Don't uncomment, not in pkgs
+            redhat.vscode-yaml
           ];
         };
       };

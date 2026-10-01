@@ -1,11 +1,10 @@
 let
   # Call the function to get the flake set.
-  inherit ((import ../lib/keys.nix) { }) flake;
-  keys = flake.keys;
+  keys = (import ../lib/keys.nix).flake.keys;
 in
 {
   "shinidev-password.age" = {
-    publicKeys = keys.ssh.shinidev ++ keys.ssh.home-station ++ keys.ssh.home-server;
+    publicKeys = keys.ssh.shinidev ++ keys.ssh.home-station;
     armor = true;
   };
 }

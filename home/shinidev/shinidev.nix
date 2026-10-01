@@ -19,6 +19,9 @@
         home.username = "shinidev";
         home.homeDirectory = "/home/shinidev";
         home.stateVersion = "25.11";
+        home.sessionVariables = {
+          EDITOR = "vim";
+        };
       };
     users.users.shinidev.extraGroups = [ "input" ];
     programs.nh.flake = "/home/shinidev/nixos";
