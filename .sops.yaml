@@ -1,9 +1,11 @@
 keys:
   - &admin-shinidev age1vcfcmh2hn85ywhdth36rna30xj5uernmawmfhgtza9nf0v2pypnqcq5geg
   - &home-station age1kfu8st5kstajt77ulmqpnpvlv2506s6d5mnqmxmahp9cz3h634xqna8263
+  - &home-server age12dswaxj534amr7n8tdukx2js38y0zhpng7344ynw0h0crga9048su02jn6
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
           - *admin-shinidev
           - *home-station
+          - *home-server
